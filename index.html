@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" defer></script>
+    <script src="js/saveImage.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 이미지 영역 -->
+        <div class="img-wrapper item">
+            <div class="img-area" id="img-area">
+                <div class="text-area">
+                    <div class="text" id="date-text">date-text</div>
+                    <div class="text" id="size-text">
+                        <span id="width-text">00</span>
+                        X
+                        <span id="height-text">00</span>
+                    </div>
+                    <div class="text" id="free-text"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 색상 선택 영역 -->
+        <div class="color-wrapper item">
+            <div class="color-picker">
+                컬러피커
+                <br/>
+                추천색상<br/>
+                <div class="selected-colors" id="selected-colors">
+                    <!-- 선택된 색상들 추가 -->
+                    <span class="sel-color" onclick="pickColor(this)" data-hover="#8ACE00" style="background-color: #8ACE00;"></span>
+                    <span class="sel-color" onclick="pickColor(this)" data-hover="#e0f0ff" style="background-color: #e0f0ff;"></span>
+                    <span class="sel-color" onclick="pickColor(this)" data-hover="#ffd2f7" style="background-color: #ffd2f7;"></span>
+                </div>
+                <br/>
+                <input type="color" name="color" id="color-picker" oninput="addColor(this.value)">
+            </div>
+        </div>
+        <!-- 크기 입력 영역 -->
+        <div class="size-input-wrapper item">
+            <div class="size-input">
+                크기 입력<br/>
+                <input type="text" id="width-input" name="width" onkeyup="printSize(this)"><!--::after로 x 문구 넣기-->&nbsp;x
+                <input type="text" id="height-input" name="height" onkeyup="printSize(this)">
+                <!--::after로 px 문구 넣기-->px
+            </div>
+        </div>
+        <!-- 사진 용량 입력 영역 -->
+        <div class="capacity-input-wrapper item">
+            <div class="capacity-input">
+                용량 입력<br/>
+                <input type="text" id="capacity-input" onkeyup="extractCapacity(this)">
+            </div>
+        </div>
+        <!-- 문구 입력 영역 -->
+        <div class="text-input-wrapper item">
+            <div class="text-input">
+                문구 입력<br/>
+                📅 날짜 선택 <input type="date" name="date-input" id="date-input" onchange="printDate(this)">
+                <br/>
+                문구 <input type="text" id="text-input" onkeyup="printText()">
+            </div>
+        </div>
+        <!-- 저장하기 버튼 영역 -->
+        <div class="save-btn-wrapper item">
+            <div class="save-btn">
+                버튼<br/>
+                <button type="button" id="png-btn" data-form="png" onclick="captureAndSave(this)">.PNG</button>
+                <button type="button" id="jpg-btn" data-form="jpg" onclick="captureAndSave(this)">.JPG</button>
+                <button type="button" id="jpeg-btn" data-form="jpeg" onclick="captureAndSave(this)">.JPEG</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
