@@ -28,6 +28,10 @@
     border: none;
 }
 
+.item:nth-child(4) {
+    background-color: rgba(195, 195, 195, 0.099);
+}
+
 .item:nth-child(5) {
     grid-column: 1 / 3;
 }
