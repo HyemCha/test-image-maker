@@ -51,8 +51,8 @@
         <div class="size-input-wrapper item">
             <div class="size-input">
                 크기 입력<br/>
-                <input type="text" id="width-input" name="width" onkeyup="printSize(this)"><!--::after로 x 문구 넣기-->&nbsp;x
-                <input type="text" id="height-input" name="height" onkeyup="printSize(this)">
+                <input type="text" id="width-input" data-testid="width-input" name="width" onkeyup="printSize(this)"><!--::after로 x 문구 넣기-->&nbsp;x
+                <input type="text" id="height-input" data-testid="height-input" name="height" onkeyup="printSize(this)">
                 <!--::after로 px 문구 넣기-->px
             </div>
         </div>
@@ -62,16 +62,16 @@
                 용량 입력
                 <span style="font-size: 0.8rem; color:gray;">(기능 추가 예정👻)</span>
                 <br/>
-                <input disabled type="text" id="capacity-input" onkeyup="extractCapacity(this)">
+                <input disabled type="text" id="capacity-input" data-testid="capacity-input" onkeyup="extractCapacity(this)">
             </div>
         </div>
         <!-- 문구 입력 영역 -->
         <div class="text-input-wrapper item">
             <div class="text-input">
                 문구 입력<br/>
-                📅 날짜 선택 <input type="date" name="date-input" id="date-input" onchange="printDate(this)">
+                📅 날짜 선택 <input type="date" name="date-input" id="date-input" data-testid="date-input" onchange="printDate(this)">
                 <br/>
-                문구 <input type="text" id="text-input" onkeyup="printText()">
+                문구 <input type="text" id="text-input" data-testid="text-input" onkeyup="printText()">
             </div>
         </div>
         <!-- 저장하기 버튼 영역 -->
